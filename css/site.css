@@ -1,6 +1,109 @@
 :root {
+  --app-accent-color: #e5a00d;
+  --app-color-overlay-30: #0000004d;
+  --app-color-overlay-60: #00000099;
+  --app-bg-color: #232629;
+  --app-text-color: #fff;
+  --app-highlight-color: var(--app-accent-color);
+  --app-poster-height: 250px;
+  --app-icon-margin: 0.5em;
+  --app-icon-margin-right: var(--app-icon-margin);
+  --app-menu-width: 200px;
+  --app-menu-icon-height: 0.9em;
 }
 
 body {
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
+  background-color: var(--app-bg-color);
+  color: var(--app-text-color);
+  display: flex;
+  flex-direction: column;
 }
+a {
+  color: var(--app-accent-color);
+}
+
+header {
+  background-color: var(--app-color-overlay-60);
+  height: 48px;
+  font-size: 1.5em;
+  margin: 0.1em;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+header svg {
+  color: var(--app-accent-color);
+  margin-right: 0.5em;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+menu {
+  margin-left: 0;
+  padding-left: 0;
+  min-width: var(--app-menu-width);
+  background-color: var(--app-color-overlay-30);
+  margin-right: 1em;
+}
+menu svg {
+  --app-menu-icon-margin: calc(var(--app-menu-icon-margin) * 1.75);
+  margin: var(--app-menu-icon-margin) var(--app-menu-icon-margin) var(--app-menu-icon-margin) var(--app-menu-icon-margin);
+  height: var(--app-menu-icon-height);
+}
+menu ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+menu li {
+  padding: 0.5em;
+}
+menu ul a {
+  color: var(--app-text-color);
+  text-decoration: none;
+}
+menu a:hover, menu li:hover a {
+  color: var(--app-accent-color);
+}
+menu li:hover {
+  color: var(--app-accent-color);
+  border-left: solid 1px var(--app-accent-color);
+  background-color: var(--app-color-overlay-30);
+}
+
+menu ul, .list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+ul a, .list a {
+  text-decoration: none;
+}
+.tv-list {
+  display: flex;
+  flex-direction: row;
+}
+.tv-list img, .poster {
+  height: var(--app-poster-height);
+  width: auto;
+  display: block;
+}
+.tv-list li {
+  display: flex;
+  width: min-content;
+  flex-direction: column;
+  margin-right: 1em;
+}
+.tv-list li span:last-child {
+  margin-top: 0.65em;
+  font-size: 0.7em;
+  font-style: italic;
+  color: var(app-text-color);
+}
+
