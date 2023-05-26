@@ -1,6 +1,214 @@
 :root {
+  --app-accent-color: #e5a00d;
+  --app-bg-color: #232629;  
+  --app-text-color: #fff;  
+  --app-menu-font-size: 0.95em;  
+  --app-menu-icon-size: 1.15em;  
+  --app-menu-text-color: #ddd;  
+  --app-highlight-color: var(--app-accent-color);
+  --app-color-overlay-10: #0000001a;
+  --app-color-overlay-30: #0000004d;
+  --app-color-overlay-60: #00000099;
+  --app-text-color-overlay-60: var(--app-text-color);
+  --app-icon-margin: 0.5em;
+  --app-icon-margin-right: var(--app-icon-margin);
+  --app-icon-padding: 0.5em;
+  --app-icon-padding-right: var(--app-icon-padding);
 }
 
 body {
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;;
+  color: var(--app-text-color);
+  background-color: var(--app-bg-color);
+  display: flex;
+  flex-direction: column;
+}
+header {
+  font-size: 1.5em;
+  background: var(--app-color-overlay-60);
+  margin: 0.1em ;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  height: 48px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  position: relative;
+  justify-content: flex-start;
+  align-items: center;
+}
+header svg {
+  color: var(--app-highlight-color);
+  margin-right: var(--app-icon-margin-right);
+  height: 0.9em;
+  width: 0.9em;
+}
+/* container */
+body > div {
+  display: flex;
+  flex-direction: row;
+}
+menu {
+  min-width: 200px;
+  color: var(--app-menu-text-color);
+  background: var(--app-color-overlay-30);
+  font-size: var(--app-menu-font-size);
+  padding-left: 0;
+  margin-left: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;  
+  margin-right: 1em;
+}
+menu a {
+  color: var(--app-menu-text-color);
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 0.5em;
+}
+menu svg, menu img {
+  --app-menu-icon-margin: calc(var(--app-icon-margin) * 1.75);
+  margin: var(--app-menu-icon-margin) var(--app-menu-icon-margin) var(--app-menu-icon-margin) var(--app-icon-margin);
+  height: var(--app-menu-icon-size);
+}
+menu ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+menu li:hover {
+  background: var(--app-color-overlay-30);
+  color: var(--app-highlight-color);
+  border-left: solid 1px var(--app-highlight-color);
+}
+menu a:hover {
+  color: var(--app-highlight-color);
+}
+
+main {
+  padding-top: 0.85em;
+}
+main h1:first-child, main h2:first-child, main h3:first-child, main h4:first-child, main h5:first-child, main h6:first-child {
+  margin-top: 0;
+}
+
+.list {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;    
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.list li {
+  width: min-content;
+  display: flex;
+  flex-direction: column;  
+  margin-right: 1.5em;
+  text-overflow: ellipsis;
+  margin-bottom: 2em;
+}
+.list li a {
+  color: var(--app-highlight-color);
+  text-decoration: none;
+}
+.tv-list li img, .tv-list li img {
+  height: 250px;
+  margin-bottom: 0.25em;
+  display: block;
+}
+.tv-list li img:hover {
+  /* border: solid 1px var(--app-highlight-color); */
+  outline: 1px solid var(--app-highlight-color);
+}
+.tv-list li span {
+  color: #aaa;
+  font-size: 0.8em;
+}
+.tv-list li span:last-child {
+  margin-top: 0.65em;
+  font-style: italic;
+  font-size: 0.7em;
+  color: var(--app-text-color);
+}
+
+.summary {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: row;
+}
+.summary img {
+  height: 300px;
+}
+.summary div {
+  display: flex;
+  flex-direction: column;
+  padding: 0 2em;
+}
+.tv-summary div h2 {
+  display: none;
+}
+.tv-summary div p {
+  font-size: 0.85em;
+}
+.actor-summary div h1 {
+  font-size: 1.25em;
+}
+.actor-summary div h2 {
+    display: none;
+}
+.actor-summary div p {
+  font-size: 0.85em;
+}
+
+.list-tv-cast {
+  font-size: 0.85em;
+  text-align: center;
+}
+.list-tv-cast img {
+  vertical-align: middle;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  padding-bottom: 0.5em;
+}
+.list-tv-cast li img:hover {
+  /* border: solid 1px var(--app-highlight-color); */
+  outline: 1px solid var(--app-highlight-color);
+}
+.list-tv-cast li > span:last-child {
+  font-size: 0.75em;
+  color: var(--app-menu-text-color);
+}
+
+table {
+  border-collapse: collapse; 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+table thead {
+  color: var(--app-highlight-color);
+  border-bottom: solid 1px var(--app-highlight-color);
+}
+table th { 
+  text-align: left;
+}
+table tbody {
+  font-size: 0.85em;
+}
+table tbody td {
+  padding: 0.5em;
+}
+table tbody tr:hover {
+  background: var(--app-color-overlay-30);
+  color: var(--app-menu-text-color);
 }
