@@ -1,6 +1,73 @@
 :root {
+  --app-accent-color: #e5a00d;
+  --app-bg-color: #232629;
+  --app-text-color: #fff;
+  --app-color-overlay-10: #0000001A;
+  --app-color-overlay-30: #0000004D;
+  --app-color-overlay-60: #00000099;
 }
 
 body {
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
+  background-color: var(--app-bg-color);
+  color: var(--app-text-color);
+}
+
+/*
+<element>.<class>
+*/
+.list {
+  list-style: none;
+}
+
+header {
+  height: 48px;
+  background-color: var(--app-color-overlay-60);
+}
+
+menu {
+  background-color: var(--app-color-overlay-30);
+  min-width: 300px;
+  padding-left: 0;
+  margin-left: 0.5em;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  /*
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--app-accent-color);
+  */
+  border: 0px solid var(--app-accent-color);
+}
+menu ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+a {
+  color: var(--app-accent-color);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--app-text-color);
+}
+
+body > div {
+  display: flex;
+  flex-direction: row;
+}
+
+.tv-list {
+  display: flex;
+  /*
+  margin-left: 0;
+  padding-left: 0;
+  */
+}
+.tv-list img {
+  height: 200px;
+  margin-bottom: 0.25em;
 }
